@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>REST Client</title>
+
+        <!-- Import CSS Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <h1 class="text-center mt-5">REST Client Bootstrap dan jQuery</h1>
+        <div class="container mt-5">
+            <button class="btn btn-primary" type="button" id="ambilData">Ambil Data</button>
+            <div class="card mt-5">
+                <div class="card-body">
+                    <p>Data dari REST API</p>
+
+                    <!-- Tabel Untuk Menampung data -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Title</th>
+                                <th>Body</th>
+                            </tr>
+                        </thead>
+
+                        <!-- Untuk Menampung data dari REST API -->
+                        <tbody id="postsData">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Import JS Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+
+        <!-- Import jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </body>
+
+</html>
+<script>
+    // Inisiasi jQuery
+    $(document).ready(function () {
+
+        // Click Event listener pada tombol yang memiliki id ambilData
+        $('#ambilData').click(function (event) {
+            $.ajax({
+                // Alamat rest api yang akan digunakan
+                url: "https://jsonplaceholder.typicode.com/posts",
+                // Request Method
+                type: "GET",
+                // Tipe data yang akan diterima
+                dataType: "json",
+                // Function Callback jika request berhasil
+                success: function (data) {
+                    // Variabel untuk menampung element tr
+                    let tableData = ""
+
+                    // Iterasi data dari rest api kemudian tulis kedalam element tr
+                    $.each(data, function (index, value) {
+                        // Tambahkan per element tr ke dalam variabel tableData
+                        tableData += `
+                            <tr>
+                                <td>${value.id}</td>
+                                <td>${value.title}</td>
+                                <td>${value.body}</td>
+                            </tr>
+                        `
+                    })
+
+                    // Masukkan variabel tableData kedalam tbody dengan id postsData
+                    $('#postsData').html(tableData)
+                }
+            })
+        })
+    })
+</script>
