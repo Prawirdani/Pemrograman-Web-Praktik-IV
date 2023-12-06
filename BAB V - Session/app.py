@@ -16,7 +16,7 @@ app.secret_key = "INI_RAHASIA"
 
 @app.route("/")
 def index():
-    # Jika user logged id
+    # Jika user logged in
     if 'is_logged_in' in session:
         # mysql cursor
         cur = mysql.connection.cursor()
@@ -32,7 +32,7 @@ def index():
 
         return render_template('index.html', data=data, username=session['username'])
     else:
-        # Jika session tidak ada / user tidak login
+        # Jika session tidak ada, alihkan ke halaman login
         return redirect(url_for('login'))
 
 @app.route("/about")
