@@ -1,4 +1,4 @@
-## BAB IX Database Migration
+## BAB IX CRUD (Create, Read, Update, Delete)
 
 ### Untuk menjalankan project
 1. Clone Repository ini atau download manual dengan format zip.
