@@ -1,8 +1,8 @@
-## BAB IX Database Migration
+## BAB X JSON Web Token (JWT)
 
 ### Untuk menjalankan project
 1. Clone Repository ini atau download manual dengan format zip.
-2. Extract folder BAB IX, kemudian buka vscode pada direktori folder tersebut.
+2. Extract folder BAB X, kemudian buka vscode pada direktori folder tersebut.
 3. Buka terminal vscode.
 4. Inisiasi *Virtual Environtment*, dengan perintah:
     ```shell
