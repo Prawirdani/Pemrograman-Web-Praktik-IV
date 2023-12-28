@@ -2,8 +2,9 @@ from app.model.todo import Todos
 from flask import request, jsonify
 from app import response, db
 from app.controller import user_controller
+from flask_jwt_extended import jwt_required
 
-
+@jwt_required() # Decorator untuk menandakan bahwa fungsi ini hanya bisa diakses dengan access token
 def index():
     try:
         id = request.args.get("user_id")
@@ -78,7 +79,7 @@ def transform(value):
         "description": value.description,
         "created_at": value.created_at,
         "updated_at": value.updated_at,
-        "user": user_controller.transform(value.users, withTodo=False),
+        "user": user_controller.transform(value.users),
     }
     return data
 

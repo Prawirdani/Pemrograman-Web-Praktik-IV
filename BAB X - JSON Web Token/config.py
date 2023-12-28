@@ -11,3 +11,6 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
+
+    # Jwt secret key dari file .flaskenv
+    JWT_SECRET_KEY = str(os.environ.get("JWT_SECRET"))

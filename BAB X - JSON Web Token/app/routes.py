@@ -32,6 +32,11 @@ def login():
     return user_controller.login()
 
 
+@app.route("/refresh", methods=["POST"])
+def refreshToken():
+    return user_controller.refresh()
+
+
 @app.route("/todos", methods=["GET", "POST"])
 def todo():
     if request.method == "GET":
