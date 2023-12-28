@@ -30,4 +30,4 @@
 
 ### Untuk Menjalankan Migrasi
 1. Pastikan telah membuat database dengan nama sesuai pada variabel `DB_DATABASE` di file environment `.flaskenv`
-2. Untuk Apply Migrations untuk membuat tabel users dan todos membuat tabel dengan perintah ketikkan perintah `flask db upgrade` pada terminal.
+2. Apply Migrations untuk membuat tabel users dan todos dengan perintah ketikkan perintah `flask db upgrade` pada terminal.
