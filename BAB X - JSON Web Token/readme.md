@@ -20,11 +20,11 @@
     env\scripts\activate
     # Jika tidak berhasil, coba gantikan terminal dari powershell menjadi command prompt.
     ```
-7. Install Libray `flask`, `python-dotenv`, `flask-sqlalchemy`, `flask-migrate` dan `pymysql`  dengan perintah pada terminal:
+7. Install Libray `flask`, `python-dotenv`, `flask-sqlalchemy`, `flask-migrate`, `pymysql` dan `flask-jwt-extended`  dengan perintah pada terminal:
     ```shell
-    pip install flask python-dotenv flask-sqlalchemy flask-migrate pymysql
+    pip install flask python-dotenv flask-sqlalchemy flask-migrate pymysql flask-jwt-extended
     # atau jika gagal
-    pip3 install flask python-dotenv flask-sqlalchemy flask-migrate pymysql
+    pip3 install flask python-dotenv flask-sqlalchemy flask-migrate pymysql flask-jwt-extended
     ```
 8. Jalankan server dengan menjalankan perintah `flask run` pada terminal
 
